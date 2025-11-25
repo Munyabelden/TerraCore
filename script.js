@@ -1,7 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // --- NEW: Navbar Shrink Functionality ---
+    const navbar = document.querySelector('.navbar');
+    const scrollThreshold = 100; // Distance in pixels scrolled before shrinking
+
+    function navScroll() {
+        if (window.scrollY > scrollThreshold) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+    
+    // Add event listener for scrolling
+    window.addEventListener('scroll', navScroll);
+    // --- END NEW: Navbar Shrink Functionality ---
+
+
     /* ==============================
-     * Mobile Navigation Toggle
+     * Mobile Navigation Toggle (Existing Code)
      * ============================== */
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -26,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /* ==============================
-     * Fade-in on Scroll Animation
+     * Fade-in on Scroll Animation (Existing Code)
      * ============================== */
     const sections = document.querySelectorAll('section');
 
@@ -48,27 +65,4 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
-
-
-    /* ==============================
-     * Contact Form Validation (Demo)
-     * ============================== */
-    const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevents the form from actually submitting
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        if (name === '' || email === '' || message === '') {
-            alert('Please fill in all required fields (Name, Email, Message).');
-        } else {
-            // This is for demonstration.
-            alert('Thank you for your inquiry, ' + name + '! \n(This is a demo and the form was not actually sent.)');
-            contactForm.reset(); // Clear the form
-        }
-    });
-
 });

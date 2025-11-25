@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="GSC" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GS Commodities - General Trading & Sourcing</title>
-    
+    <title>GS Commodities | Trading & Sourcing</title>
+    <link rel="manifest" href="/site.webmanifest" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -14,18 +19,13 @@
     <header>
         <nav class="navbar">
             <a href="#hero" class="logo-container">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="10" width="30" height="80" fill="#FFB900"></rect>
-                    <rect x="50" y="10" width="40" height="30" fill="#0D2C4D"></rect>
-                    <rect x="50" y="50" width="40" height="40" fill="#0D2C4D"></rect>
-                </svg>
-                <span class="logo-text">GS Commodities</span>
+                <img src="images/gsc file.svg" alt="logo">
             </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#trading">General Trading</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#trading">Trading</a></li>
                 <li><a href="#sourcing">Sourcing</a></li>
-                <li><a href="#clients">Partners</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -41,7 +41,7 @@
         <section id="hero">
             <div class="hero-content">
                 <h1>GS Commodities</h1>
-                <p>We Supply Everything. We Deliver Everywhere.</p>
+                <p>We Supply Everything. We Deliver Worldwide.</p>
                 
                 <div class="hero-buttons">
                     <a href="#trading" class="btn trading-btn">
@@ -57,35 +57,75 @@
         </section>
 
         <section id="about" class="container">
-            <div class="about-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <div class="about-content">
                 <h2>Who We Are</h2>
                 <p><strong>GS Commodities</strong> is a premier South African supplier dedicated to efficiency and reliability. We specialize in two core areas: the general trading of everyday industrial commodities and the specialized sourcing of high-grade electrical and mining equipment.</p>
                 <br>
-                <p>While we hold a primary contract with a major strategic partner, our capacity allows us to supply clients across the Western Cape and South Africa. If you need it, we find it, and we deliver it to your door.</p>
+                <p>While we hold a primary contract with a major strategic partner, our capacity allows us to supply clients across the Western Cape and **worldwide**. Whatever the requirement—a specific product or a full service—**we will source and get it to you, wherever you are.**</p>
+            </div>
+            <div class="about-image">
+                <img src="images/About.jpg" alt="GS Commodities Operations">
+            </div>
+        </section>
+
+        <section id="services" style="background-color: var(--light-grey);">
+            <div class="container">
+                <h2>Our Core Services</h2>
+                <p class="section-subtitle">We manage the full lifecycle of supply, from procurement to delivery.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fa-solid fa-handshake-simple"></i>
+                        <h3>Equipment Leasing</h3>
+                        <p>Access our fleet of specialized machinery without the capital outlay. We offer flexible, short-term and long-term lease agreements tailored to your project duration.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-tags"></i>
+                        <h3>Trading & Sales</h3>
+                        <p>We facilitate direct sales of new and certified used heavy machinery and specialized equipment sourced globally to meet your capital investment needs.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <h3>National Logistics</h3>
+                        <p>We manage the complex logistics of mobilizing and demobilizing equipment and commodities to remote sites across South Africa, ensuring rapid delivery.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-globe"></i>
+                        <h3>Global Procurement</h3>
+                        <p>We leverage our worldwide network to source any specific product or equipment, ensuring rapid delivery to your operational base anywhere in the world.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="trading">
             <div class="container">
-                <h2>General Trading</h2>
+                <h2>Trading</h2>
                 <p class="section-subtitle">We supply everything required for your daily operations.</p>
                 
                 <div class="product-grid">
                     <div class="product-card">
-                        <img src="trading-general.jpg" alt="PPE & Safety">
-                        <h3>PPE & Safety Gear</h3>
+                        <img src="images/industrial.jpg" alt="Industrial Tools">
+                        <h3>Industrial Supplies</h3>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=1000&auto=format&fit=crop" alt="Industrial Tools">
-                        <h3>Industrial Tools</h3>
+                        <img src="images/high tech.jpg" alt="Office Tech">
+                        <h3>Hi-Tech Office Requirements</h3>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1000&auto=format&fit=crop" alt="Construction Materials">
+                        <img src="images/consumables.jpg" alt="PPE">
+                        <h3>Site Consumables</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Construction.jpg" alt="Construction">
                         <h3>Construction Materials</h3>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1000&auto=format&fit=crop" alt="Consumables">
-                        <h3>Site Consumables</h3>
+                        <img src="images/hospitality.jpg" alt="Consumables">
+                        <h3>Hospitality Supplies</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1000&auto=format&fit=crop" alt="Welding">
+                        <h3>Welding & Workshop</h3>
                     </div>
                 </div>
             </div>
@@ -93,25 +133,33 @@
 
         <section id="sourcing" style="background-color: var(--light-grey);">
             <div class="container">
-                <h2>Specialized Sourcing</h2>
-                <p class="section-subtitle">Expert sourcing of Electrical and Heavy Mining Equipment.</p>
+                <h2>Sourcing</h2>
+                <p class="section-subtitle">Expert sourcing of Electrical and Mining Equipment.</p>
                 
                 <div class="product-grid">
                     <div class="product-card">
-                        <img src="sourcing-electrical.jpg" alt="Transformers">
-                        <h3>High Voltage Transformers</h3>
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1000&auto=format&fit=crop" alt="Testing Equipment">
+                        <h3>Electrical Testing & Metering</h3>
                     </div>
                     <div class="product-card">
-                        <img src="fleet-excavator.jpg" alt="Mining Machinery">
-                        <h3>Heavy Mining Machinery</h3>
+                        <img src="images/electric protection.jpg" alt="Switchgear">
+                        <h3>Electrical Protection Equipment</h3>
                     </div>
                     <div class="product-card">
-                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=1000&auto=format&fit=crop" alt="Switchgear">
-                        <h3>Industrial Switchgear</h3>
+                        <img src="images/Fibre.jpg" alt="Fiber Optic">
+                        <h3>Fiber-Optic Equipment</h3>
                     </div>
                     <div class="product-card">
-                        <img src="fleet-haul-truck.jpg" alt="Spares">
-                        <h3>Heavy Machinery Spares</h3>
+                        <img src="images/recultation.jpg" alt="Reticulation">
+                        <h3>Electrical Reticulation Services</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/heavy mining.jpg" alt="Heavy Machinery">
+                        <h3>Mining Machinery</h3>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/repair.jpg" alt="Spares">
+                        <h3>Mechanical Spares</h3>
                     </div>
                 </div>
             </div>
@@ -120,7 +168,7 @@
         <section id="clients">
             <div class="container">
                 <h2>Our Network</h2>
-                <p class="section-subtitle">Serving our Strategic Partner and the wider South African market.</p>
+                <p class="section-subtitle">Serving our Strategic Partner and the wider **Global Market**.</p>
                 <div class="clients-partners-container" style="justify-content: center;">
                     <div class="partners-list" style="text-align: center;">
                         <h3 class="list-title">Strategic Contract Partner</h3>
@@ -131,10 +179,10 @@
                     <div class="clients-list" style="text-align: center; margin-top: 2rem;">
                         <h3 class="list-title">We Also Supply</h3>
                         <ul style="display: inline-block; text-align: left;">
-                            <li>Western Cape Construction Group</li>
-                            <li>Karoo Energy Solutions</li>
-                            <li>City of Cape Town (Tender Supply)</li>
-                            <li>Private Mining Contractors</li>
+                            <li>Mining and Quarrying Operations</li>
+                            <li>Industrial Construction Firms</li>
+                            <li>Commercial Development Projects</li>
+                            <li>Energy and Utility Sectors</li>
                         </ul>
                     </div>
                 </div>
@@ -150,7 +198,7 @@
                     <p class="title" style="color: #ccc;">CEO & Founder</p>
                     <br>
                     <p style="font-size: 1.5rem; font-style: italic; color: var(--white);">
-                        "At GS Commodities, we don't just lease equipment; we deliver certainty. Our commitment is built on industry experience, a relentless focus on safety, and a deep partnership with every client. Your success is the bedrock of our business."
+                        "At GS Commodities, our commitment is simple: whatever the need, whatever the location, **we will source it and ensure its seamless delivery**. Your successful operation is the only certainty we care about."
                     </p>
                 </div>
             </div>
@@ -159,37 +207,45 @@
         <section id="contact">
             <div class="container">
                 <h2>Get in Touch</h2>
-                <p class="section-subtitle">Ready to order? Contact our sales team directly.</p>
+                <p class="section-subtitle">Ready to order? Visit us or contact our sales team.</p>
                 
-                <div class="contact-container" style="justify-content: center; text-align: center;">
-                    <div class="contact-info" style="max-width: 600px; background: white; padding: 3rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                        
-                        <div class="contact-info-item" style="flex-direction: column; text-align: center;">
-                            <i class="fa-solid fa-phone" style="margin-bottom: 1rem; width: auto;"></i>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Details</h3>
+                        <p>Reach out directly to our sales department for quotes and specialized sourcing requests.</p>
+                        <br>
+                        <div class="contact-info-item">
+                            <i class="fa-solid fa-phone"></i>
                             <div>
                                 <h4>Direct Line</h4>
                                 <p>+27 21 555 9988</p>
                             </div>
                         </div>
-                        <hr style="border: 0; border-top: 1px solid #eee; margin: 1.5rem 0;">
-                        
-                        <div class="contact-info-item" style="flex-direction: column; text-align: center;">
-                            <i class="fa-solid fa-envelope" style="margin-bottom: 1rem; width: auto;"></i>
+                        <div class="contact-info-item">
+                            <i class="fa-solid fa-envelope"></i>
                             <div>
                                 <h4>Orders & Inquiries</h4>
                                 <p>orders@gs-commodities.co.za</p>
                             </div>
                         </div>
-                        <hr style="border: 0; border-top: 1px solid #eee; margin: 1.5rem 0;">
-
-                        <div class="contact-info-item" style="flex-direction: column; text-align: center;">
-                            <i class="fa-solid fa-location-dot" style="margin-bottom: 1rem; width: auto;"></i>
+                        <div class="contact-info-item">
+                            <i class="fa-solid fa-location-dot"></i>
                             <div>
-                                <h4>Head Office</h4>
-                                <p>Unit 4, West Coast Business Park, Cape Town, South Africa</p>
+                                <h4>Head Office & Warehouse</h4>
+                                <p>Unit 4, West Coast Business Park,<br>Montague Gardens, Cape Town</p>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=West%20Coast%20Business%20Park%2C%20Cape%20Town&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -200,7 +256,11 @@
     <footer>
         <div class="container">
             <div class="footer-logo">GS Commodities</div>
-            <p>&copy; 2025 GS Commodities. All Rights Reserved. <br> We Supply Everything. We Deliver Everywhere.</p>
+            <p>© 2021-2025 GS Commodities. All Rights Reserved. <br> We Supply Everything. We Deliver Everywhere.</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem; color: #aaa;">
+                Website by 
+                <a href="https://nateanne.co.za/" target="_blank" style="color: var(--secondary-color); text-decoration: none;">Nate~Anne</a>
+            </p>
         </div>
     </footer>
 

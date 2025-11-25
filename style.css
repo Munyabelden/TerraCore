@@ -1,12 +1,14 @@
 /* =================================== */
-/* 1. CSS Variables & Global Reset    */
+/* 1. CSS Variables & Global Reset    */
 /* =================================== */
 :root {
-    --primary-color: #0D2C4D; /* Deep Blue */
-    --secondary-color: #61bfdb; /* Gold */
+    --primary-color: #051c35; /* Deep Blue (Dark) */
+    --secondary-color: #88D4FF; /* Light Blue (Accent) */
     --dark-grey: #333333;
     --light-grey: #f4f4f4;
     --white: #ffffff;
+    /* NEW: Define a third color for the hero button overlay, which was previously a specific yellow */
+    --hero-overlay-color: #FFB900; /* Reverting to the original Gold/Yellow for the overlay for better contrast */
 }
 
 * {
@@ -46,7 +48,7 @@ section.visible {
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 1rem;
 }
 
@@ -66,19 +68,25 @@ h2 {
 }
 
 /* =================================== */
-/* 2. Header & Navigation           */
+/* 2. Header & Navigation           */
 /* =================================== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--white);
-    padding: 1.5rem 2rem;
+    padding: 0 2rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
 .logo-container {
@@ -87,10 +95,11 @@ h2 {
     text-decoration: none;
 }
 
-.logo-svg {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+.logo-container img {
+    height: 80px;
+    width: 200px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .logo-text {
@@ -125,7 +134,8 @@ h2 {
     left: 0;
     width: 0;
     height: 3px;
-    background: var(--secondary-color);
+    /* ACCENT COLOR IMPLEMENTATION */
+    background: var(--secondary-color); 
     transition: width 0.3s ease;
 }
 
@@ -146,8 +156,25 @@ h2 {
     transition: all 0.3s ease;
 }
 
+.navbar.scrolled {
+    padding: 0.5rem 2rem; /* Smaller vertical padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow when sticky/shrunk */
+}
+
+/* Shrink the logo size when scrolled */
+.navbar.scrolled .logo-container img {
+    height: 50px; /* Shrink logo height */
+    width: 150px; /* Shrink logo width */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Slightly shrink the nav links/font size if desired (optional) */
+.navbar.scrolled .nav-links a {
+    font-size: 0.9rem;
+}
+
 /* =================================== */
-/* 3. Hero Section & BUTTONS        */
+/* 3. Hero Section & BUTTONS        */
 /* =================================== */
 #hero {
     display: flex;
@@ -157,8 +184,8 @@ h2 {
     height: 100vh;
     color: var(--white);
     /* Using the previous hero background image */
-    background: linear-gradient(rgba(17, 39, 63, 0.9), rgba(18, 39, 61, 0.8)), 
-                url('hero-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(13, 37, 63, 0.8), rgba(9, 33, 58, 0.8)), 
+                url('/images/Mine.png') no-repeat center center/cover;
     padding-top: 80px; 
 }
 
@@ -175,7 +202,8 @@ h2 {
 #hero p {
     font-size: 1.5rem;
     margin-bottom: 3rem;
-    color: var(--secondary-color);
+    /* ACCENT COLOR IMPLEMENTATION */
+    color: var(--secondary-color); 
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -199,7 +227,8 @@ h2 {
     
     text-decoration: none;
     color: var(--primary-color); 
-    border: 4px solid var(--secondary-color);
+    /* ACCENT COLOR IMPLEMENTATION */
+    border: 4px solid var(--secondary-color); 
     border-radius: 10px;
     
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
@@ -207,28 +236,30 @@ h2 {
 }
 
 .hero-buttons .btn span {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     font-weight: 900;
     text-transform: uppercase;
     z-index: 2;
 }
 
 .hero-buttons .btn small {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     margin-top: 5px;
     z-index: 2;
 }
 
 .trading-btn {
-    background: linear-gradient(rgba(0, 195, 255, 0.5), rgba(0, 195, 255, 0.5)), 
+    /* Uses the Gold/Yellow overlay color for contrast over the image */
+    background: linear-gradient(rgba(177, 164, 91, 0.65), rgba(177, 164, 91, 0.65)), 
                 url('/images/shipping.png');
     background-position: center;
     background-size: cover;
 }
 
 .sourcing-btn {
-    background: linear-gradient(rgba(0, 195, 255, 0.5), rgba(0, 195, 255, 0.5)),  
+    /* Uses the Gold/Yellow overlay color for contrast over the image */
+    background: linear-gradient(rgba(177, 164, 91, 0.65), rgba(177, 164, 91, 0.65)), 
                 url('/images/sourcing.jpg');
     background-position: center;
     background-size: cover;
@@ -236,8 +267,110 @@ h2 {
 
 .hero-buttons .btn:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(255, 185, 0, 0.6);
-    border-color: white;
+    /* ACCENT COLOR IMPLEMENTATION (Blue glow on hover) */
+    box-shadow: 0 20px 40px rgba(136, 212, 255, 0.6); 
+    border-color: var(--secondary-color);
+}
+
+/* =================================== */
+/* ABOUT SECTION STYLES (Restored)   */
+/* =================================== */
+#about {
+    background-color: var(--white);
+    margin: 80px 15%;
+}
+/* This makes the text and image sit side-by-side */
+#about .container {
+    display: flex;
+    align-items: center; /* Vertically centers them */
+    justify-content: space-between;/* Space between text and image */
+}
+
+.about-content {
+    flex: 1; /* Takes up 50% width */
+    margin-bottom: 30px;
+    font-size: 1.15rem;
+}
+
+.about-image {
+    flex: 1; /* Takes up 50% width */
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px; /* Fixed height for consistency */
+    border-radius: 10px;
+    object-fit: cover; /* Ensures image doesn't stretch */
+    object-position: top; /* Focuses on the top of the image */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Nice shadow effect */
+}
+
+/* =================================== */
+/* SERVICES SECTION STYLES (General) */
+/* =================================== */
+#services {
+    background-color: var(--light-grey);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e1e1e1; /* Subtle border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Lifts up on hover */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    /* ACCENT COLOR IMPLEMENTATION */
+    border-color: var(--secondary-color); 
+}
+
+.service-card i {
+    font-size: 3rem;
+    /* ACCENT COLOR IMPLEMENTATION */
+    color: var(--secondary-color); 
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* =================================== */
+/* RESPONSIVE FIXES (Mobile)         */
+/* =================================== */
+@media (max-width: 900px) {
+    #about {
+        margin: 80px 5%;
+    }
+    /* Stack About section on mobile */
+    #about .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-image img {
+        height: 300px; /* Slightly shorter on mobile */
+    }
 }
 
 /* =================================== */
@@ -245,7 +378,7 @@ h2 {
 /* =================================== */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
@@ -276,7 +409,7 @@ h2 {
 }
 
 /* =================================== */
-/* 5. Clients & Partners            */
+/* 5. Clients & Partners            */
 /* =================================== */
 .clients-partners-container {
     display: flex;
@@ -296,7 +429,8 @@ h2 {
 .list-title {
     font-size: 1.5rem;
     color: var(--primary-color);
-    border-bottom: 3px solid var(--secondary-color);
+    /* ACCENT COLOR IMPLEMENTATION */
+    border-bottom: 3px solid var(--secondary-color); 
     padding-bottom: 10px;
     margin-bottom: 1.5rem;
 }
@@ -312,7 +446,7 @@ li {
 }
 
 /* =================================== */
-/* 6. Team Section (Rodney)         */
+/* 6. Team Section (Rodney)         */
 /* =================================== */
 #team {
     background: var(--primary-color);
@@ -320,7 +454,7 @@ li {
 }
 
 /* =================================== */
-/* 7. Footer                        */
+/* 7. Footer                        */
 /* =================================== */
 footer {
     background: var(--dark-grey);
@@ -337,7 +471,7 @@ footer {
 }
 
 /* =================================== */
-/* 8. Responsive Design             */
+/* 8. Responsive Design             */
 /* =================================== */
 @media (max-width: 768px) {
     .nav-links {
@@ -373,5 +507,63 @@ footer {
     .hero-buttons .btn {
         width: 100%;
         max-width: 300px;
+    }
+}
+
+/* =================================== */
+/* CONTACT SECTION WITH MAP         */
+/* =================================== */
+
+.contact-container {
+    display: flex;
+    gap: 3rem;
+    align-items: stretch; /* Makes both boxes the same height */
+}
+
+.contact-info {
+    flex: 1;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start; /* Aligns icon with top of text */
+    margin-bottom: 2rem;
+}
+
+.contact-info-item i {
+    font-size: 1.5rem;
+    /* ACCENT COLOR IMPLEMENTATION */
+    color: var(--secondary-color); 
+    width: 40px;
+    margin-top: 5px; /* Slight adjustment for alignment */
+}
+
+/* The Map Container */
+.map-container {
+    flex: 1.5; /* Map takes up slightly more width than info */
+    min-height: 400px; /* Ensures map has height on mobile */
+    border-radius: 10px;
+    overflow: hidden; /* Clips the map corners */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 5px solid var(--white); /* White frame around map */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .map-container {
+        height: 350px; /* Fixed height for mobile map */
     }
 }
